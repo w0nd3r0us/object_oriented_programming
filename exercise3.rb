@@ -19,8 +19,18 @@ class Player
   end
 
 
-  # def do_battle(damage)
-  # end
+  def do_battle(damage)
+    @health_points = @health_points - damage.to_i
+      if @health_points < 1
+        @lives = @lives - 1
+
+          if @lives <= 0
+            restart
+          end
+
+        @health_points = 10
+      end
+  end
 
   def restart
     @gold_coins = 0
@@ -43,21 +53,26 @@ class Player
 end
 
 john = Player.new
-
-p john.collect_treasure
-p john.collect_treasure
-p john.collect_treasure
-p john.collect_treasure
-p john.collect_treasure
-p john.collect_treasure
-p john.collect_treasure
-p john.collect_treasure
-p john.collect_treasure
-p john.collect_treasure
-p john.collect_treasure
-p john.collect_treasure
-
-
-p john.display_g
-p john.display_h
-p john.display_l
+# 
+# p john.collect_treasure
+# p john.collect_treasure
+# p john.collect_treasure
+# p john.collect_treasure
+# p john.collect_treasure
+# p john.collect_treasure
+# p john.collect_treasure
+# p john.collect_treasure
+# p john.collect_treasure
+# p john.collect_treasure
+# p john.collect_treasure
+# p john.collect_treasure
+#
+# p john.display_g
+# p john.display_h
+# p john.display_l
+#
+# p john.do_battle(10)
+#
+# p john.display_g
+# p john.display_h
+# p john.display_l
